@@ -1,0 +1,84 @@
+# Salesforce .gitignore
+
+# Salesforce CLI / SFDX
+.sfdx/
+.sf/
+.localdevserver/
+
+# LWC Jest
+**/__tests__/**
+**/.eslintrc.json
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE - VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+*.code-workspace
+
+# IDE - IntelliJ
+.idea/
+*.iml
+
+# Metadata API
+.*.swp
+.org_metadata/
+Referenced Packages/
+bin/
+config/
+destructive/
+
+# Python
+*.pyc
+__pycache__/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Salesforce DX
+.sfdx/
+.localdevserver/
+
+# Apex Log Files
+*.log
+
+# Package directories
+**/package2-descriptor.json
+**/package2-manifest.json
+
+# Scratch Org Temp Files
+orgs/
+
+# Test Results
+test-results/
+coverage/
+
+# LWC Local Development
+**/lwc/**/*.css.map
+**/.localdevserver
+
+# Apex Debug Logs
+*.apexlog
+
+# Template Specific
+templates/
+
+# Misc
+.cache/
+temp/
+tmp/
