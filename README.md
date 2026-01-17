@@ -9,7 +9,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 
 **Built by:** Rahul Akula  
 **Timeline:** 24 weeks (Dec 2024 - June 2025)  
-**Status:** Week 3 Complete ✅
+**Status:** Week 4 Complete ✅
 
 ## 🚀 Key Features
 
@@ -56,7 +56,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 - **Week 1** ✅ Foundation & Setup - COMPLETED
 - **Week 2** ✅ Building Education Data Model - COMPLETED
 - **Week 3** ✅ Automation & Process Builder - COMPLETED 
-- **Week 4** 🎯 Advanced Flows - NEXT
+- **Week 4** ✅ Apex Development & Triggers - COMPLETED
 
 ## 🎓 Week 1: Foundation & Setup ✅
 
@@ -80,7 +80,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 
 ---
 
-## 🎓 Week 2: Education Data Model ✅  ← ADD THIS NEW SECTION!
+## 🎓 Week 2: Education Data Model ✅  
 
 **Duration:** December 29, 2024 - January 3, 2025
 
@@ -199,7 +199,53 @@ Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
 **📊 [View Week 3 Documentation](documentation/week-by-week/week-03-day-03.md)**  
 **📸 [View Screenshots](documentation/screenshots/week-03/)**
 
+---
 
+### ✅ Week 4: Apex Development & Triggers - Complete
+**Duration:** January 13-17, 2026
+
+**Completed:**
+- Apex Trigger: EnrollmentTrigger (60 lines)
+- Test Class: EnrollmentTriggerTest (70 lines)
+- 96% code coverage (required: 75%)
+- Comprehensive debugging and problem-solving
+
+**Trigger Functionality:**
+- Prevents enrollment in full courses
+- Counts only active enrollments (not dropped/completed)
+- Bulkified for handling multiple records
+- User-friendly error messages
+
+**Technical Skills:**
+- Trigger context variables (Trigger.new)
+- SOQL aggregate queries (COUNT, GROUP BY)
+- Collections (Set, Map, List)
+- Exception handling (try-catch)
+- Test class creation with assertions
+- Debugging production code
+
+**Code Quality:**
+- 130 lines of production-ready code
+- 96% test coverage
+- Follows Salesforce best practices
+- Bulkified and governor limit compliant
+
+**Debugging Journey:**
+- Resolved 6 different issues
+- Learned trigger timing and field access
+- Mastered test data creation
+- Achieved deployment readiness
+
+**📊 [View Week 4 Documentation](documentation/week-by-week/week-04-apex-triggers.md)**  
+**📸 [View Screenshots](documentation/screenshots/week-04/)**
+
+---
+
+### 🎯 Week 5: Advanced Flows (NEXT)
+**Starting:** Week of January 20, 2026  
+**Focus:** Flow Builder, Screen Flows, Record-Triggered Flows
+
+---
 
 ## 👨‍💻 About
 
