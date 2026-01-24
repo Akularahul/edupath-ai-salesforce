@@ -9,7 +9,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 
 **Built by:** Rahul Akula  
 **Timeline:** 24 weeks (Dec 2024 - June 2025)  
-**Status:** Week 4 Complete ✅
+**Status:** Week 5 Complete ✅
 
 ## 🚀 Key Features
 
@@ -57,6 +57,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 - **Week 2** ✅ Building Education Data Model - COMPLETED
 - **Week 3** ✅ Automation & Process Builder - COMPLETED 
 - **Week 4** ✅ Apex Development & Triggers - COMPLETED
+- **Week 5** ✅ Advanced Flows & Screen Flow - COMPLETED
 
 ## 🎓 Week 1: Foundation & Setup ✅
 
@@ -241,9 +242,63 @@ Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
 
 ---
 
-### 🎯 Week 5: Advanced Flows (NEXT)
-**Starting:** Week of January 20, 2026  
-**Focus:** Flow Builder, Screen Flows, Record-Triggered Flows
+---
+
+### ✅ Week 5: Advanced Flows & Screen Flows (Complete)
+**Duration:** January 20-23, 2026
+
+**Completed:**
+- Screen Flow: Course Search Wizard (15+ elements)
+- Record-Triggered Flow: Enrollment Auto Notification (3 elements)
+- Interactive UI with data tables
+- Modern automation replacing Process Builder
+
+**Screen Flow Features:**
+- Multi-screen wizard interface
+- SOQL course search by term
+- Interactive data table display
+- User input validation
+- Error handling screens
+- Merge field confirmations
+
+**Record-Triggered Flow Features:**
+- Automatic trigger on enrollment creation
+- Cross-object field updates
+- Email notifications with dynamic content
+- Background processing
+
+**Technical Skills:**
+- Screen components (text input, picklist, data table)
+- Get Records with filters
+- Decision logic and branching
+- Collection and record variables
+- Record-Triggered Flow configuration
+- Assignment elements
+- Send Email action
+- Flow debugging and testing
+
+**Debugging Experience:**
+- Resolved variable assignment issues
+- Fixed field reference errors
+- Simplified complex logic
+- Systematic element testing
+
+**Business Value:**
+- Self-service course browsing
+- Real-time course availability
+- Automatic notifications
+- Zero manual intervention
+- Enhanced student experience
+
+**📊 [View Week 5 Documentation](documentation/week-by-week/week-05-advanced-flows.md)**  
+**📸 [View Screenshots](documentation/screenshots/week-05/)**
+
+---
+
+### 🎯 Week 6: Lightning Web Components Intro (NEXT)
+**Starting:** Week of January 27, 2026  
+**Focus:** First LWC, JavaScript basics, Component interaction
+
 
 ---
 
