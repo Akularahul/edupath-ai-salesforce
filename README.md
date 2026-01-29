@@ -1,7 +1,7 @@
 # EduPath AI - Intelligent Learning Management Platform
 
 ![Project Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![Week](https://img.shields.io/badge/Week-2-green) 
+![Week](https://img.shields.io/badge/Week-6-green) 
 
 ## 🎓 Project Overview
 
@@ -9,7 +9,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 
 **Built by:** Rahul Akula  
 **Timeline:** 24 weeks (Dec 2024 - June 2025)  
-**Status:** Week 5 Complete ✅
+**Status:** Week 6 Complete ✅
 
 ## 🚀 Key Features
 
@@ -58,6 +58,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 - **Week 3** ✅ Automation & Process Builder - COMPLETED 
 - **Week 4** ✅ Apex Development & Triggers - COMPLETED
 - **Week 5** ✅ Advanced Flows & Screen Flow - COMPLETED
+- **Week 5** ✅ Lightning Web Components Intro - COMPLETED
 
 ## 🎓 Week 1: Foundation & Setup ✅
 
@@ -295,12 +296,72 @@ Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
 
 ---
 
-### 🎯 Week 6: Lightning Web Components Intro (NEXT)
-**Starting:** Week of January 27, 2026  
-**Focus:** First LWC, JavaScript basics, Component interaction
 
+### ✅ Week 6: Lightning Web Components Introduction (Complete)
+**Duration:** January 28-29, 2026
+
+**Completed:**
+- Professional development environment (VS Code + CLI)
+- First Lightning Web Component (95 lines)
+- Apex Controller integration (40 lines)
+- Interactive UI with search and refresh
+- Deployed to Salesforce org
+
+**Component Built:**
+- Enrollment Viewer component
+- Displays user's course enrollments
+- Search functionality (real-time filtering)
+- Refresh button for data reload
+- Professional Lightning Design System styling
+
+**Technical Implementation:**
+- HTML template with conditional rendering
+- JavaScript with decorators (@track, @wire)
+- Apex @AuraEnabled method
+- SOQL relationship queries
+- Lightning App Builder deployment
+
+**Development Tools:**
+- VS Code with Salesforce Extensions
+- Salesforce CLI (sf commands)
+- Project-based development
+- Command-line deployment
+
+**Skills Demonstrated:**
+- LWC component structure (HTML, JS, XML)
+- Modern JavaScript (ES6+)
+- Apex backend integration
+- Wire service for data loading
+- Event handling (search, refresh)
+- SLDS styling
+- Responsive design
+- Lightning page creation
+
+**Code Metrics:**
+- 135 lines of production code
+- 3 component files
+- 1 Apex class
+- 8 screenshots
+- 100% deployment success
+
+**Business Value:**
+- Self-service enrollment viewing
+- Mobile-responsive interface
+- Real-time data display
+- Professional user experience
+- Reusable component architecture
+
+**📊 [View Week 6 Documentation](documentation/week-by-week/week-06-lightning-web-components.md)**  
+**📸 [View Screenshots](documentation/screenshots/week-06/)**
 
 ---
+
+### 🎯 Week 7: Advanced LWC Features (NEXT)
+**Starting:** Week of February 3, 2026  
+**Focus:** Component communication, Custom events, Record editing
+
+---
+
 
 ## 👨‍💻 About
 
