@@ -356,9 +356,79 @@ Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
 
 ---
 
-### 🎯 Week 7: Advanced LWC Features (NEXT)
-**Starting:** Week of February 3, 2026  
-**Focus:** Component communication, Custom events, Record editing
+### ✅ Week 7: Advanced LWC - Course Enrollment (Complete)
+**Duration:** February 10, 2026
+
+**Completed:**
+- Course Browser Component (240 lines total)
+- Advanced Apex Controller (120 lines)
+- Interactive course enrollment system
+- Real-time seat availability tracking
+- Toast notifications for user feedback
+
+**Component Features:**
+- Search box for filtering courses
+- Refresh button for reloading data
+- Course cards with detailed information
+- One-click enrollment
+- Seat availability badges (Available/Full)
+- Dynamic button states (disabled when full)
+
+**Technical Implementation:**
+- Imperative Apex calls for DML operations
+- Wire service for data display
+- Promise handling (.then/.catch)
+- Toast notifications (ShowToastEvent)
+- refreshApex for cache updates
+- Data transformation with map()
+- Optional chaining for safety
+
+**Business Logic:**
+- Duplicate enrollment prevention
+- Course capacity validation
+- User-based student lookup
+- Real-time seat count updates
+- Automatic enrollment record creation
+- Error handling with custom messages
+
+**Apex Controller:**
+- getCourseOfferings() - cacheable query
+- createEnrollment() - DML with validation
+- SOQL relationship queries
+- Custom AuraHandledException
+- with sharing security
+
+**Advanced Skills:**
+- Imperative vs declarative Apex calls
+- Toast event dispatching
+- Data transformation and computed properties
+- Event.target.dataset for data passing
+- Comprehensive error handling
+- Loading/empty/error states
+
+**Code Metrics:**
+- 360 lines production code
+- 2 LWC files (HTML, JS)
+- 1 Apex class
+- 8 screenshots
+- 100% functionality working
+
+**Business Value:**
+- Self-service course enrollment
+- Prevents over-enrollment automatically
+- Real-time capacity management
+- Professional user notifications
+- Instant enrollment confirmation
+- Zero manual intervention required
+
+**📊 [View Week 7 Documentation](documentation/week-by-week/week-07-advanced-lwc.md)**  
+**📸 [View Screenshots](documentation/screenshots/week-07/)**
+
+---
+
+### 🎯 Week 8: Component Communication & Events (NEXT)
+**Starting:** Week of February 17, 2026  
+**Focus:** Parent-child components, Custom events, Lightning Message Service
 
 ---
 
