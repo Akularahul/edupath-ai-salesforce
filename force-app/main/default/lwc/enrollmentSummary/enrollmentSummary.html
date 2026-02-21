@@ -1,0 +1,117 @@
+<template>
+    <lightning-card title="My Enrollment Summary" icon-name="standard:opportunity">
+
+        <!-- Loading State -->
+        <template if:true={isLoading}>
+            <div class="slds-m-around_large slds-text-align_center">
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Summary Content -->
+        <template if:false={isLoading}>
+            <div class="slds-m-around_medium">
+
+                <!-- Stats Grid -->
+                <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_medium">
+                    
+                    <!-- Total Enrolled -->
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="summary-stat slds-text-align_center slds-box">
+                            <p class="stat-number slds-text-heading_large">
+                                {totalEnrolled}
+                            </p>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                Courses Enrolled
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Total Credits -->
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="summary-stat slds-text-align_center slds-box">
+                            <p class="stat-number slds-text-heading_large">
+                                {totalCredits}
+                            </p>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                Total Credits
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Active Enrollments -->
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="summary-stat slds-text-align_center slds-box">
+                            <p class="stat-number slds-text-heading_large">
+                                {activeEnrollments}
+                            </p>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                Active
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Completed -->
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="summary-stat slds-text-align_center slds-box">
+                            <p class="stat-number slds-text-heading_large">
+                                {completedEnrollments}
+                            </p>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                Completed
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- No Enrollments Message -->
+                <template if:true={hasNoEnrollments}>
+                    <div class="slds-text-align_center slds-m-around_medium">
+                        <lightning-icon icon-name="custom:custom78" size="medium"></lightning-icon>
+                        <p class="slds-text-heading_small slds-m-top_small">
+                            No enrollments yet
+                        </p>
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            Browse courses and enroll to get started!
+                        </p>
+                    </div>
+                </template>
+
+                <!-- Enrollment List -->
+                <template if:true={hasEnrollments}>
+                    <h4 class="slds-text-heading_small slds-m-bottom_small">
+                        Current Enrollments:
+                    </h4>
+                    <template for:each={enrollments} for:item="enrollment">
+                        <div key={enrollment.Id} class="enrollment-item slds-box slds-m-bottom_small">
+                            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                
+                                <!-- Course Info -->
+                                <div class="slds-col">
+                                    <p class="slds-text-body_regular">
+                                        <strong>{enrollment.Course_Offering__r.Course__r.Name}</strong>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        {enrollment.Course_Offering__r.Term__c} | Section {enrollment.Course_Offering__r.Section__c}
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        Enrolled: {enrollment.Enrollment_Date__c}
+                                    </p>
+                                </div>
+
+                                <!-- Status Badge -->
+                                <div class="slds-col slds-no-flex">
+                                    <lightning-badge label={enrollment.Status__c}></lightning-badge>
+                                </div>
+
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

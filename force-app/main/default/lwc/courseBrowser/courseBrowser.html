@@ -1,0 +1,117 @@
+<template>
+    <lightning-card title="Browse & Enroll in Courses" icon-name="standard:education">
+        
+        <!-- Search Box and Refresh Button -->
+        <div class="slds-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_3-of-4">
+                    <lightning-input
+                        type="search"
+                        label="Search Courses"
+                        value={searchKey}
+                        onchange={handleSearchChange}
+                        placeholder="Search by course name...">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <div class="slds-m-top_large">
+                        <lightning-button
+                            label="Refresh"
+                            icon-name="utility:refresh"
+                            onclick={handleRefresh}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-m-around_large slds-text-align_center">
+                <lightning-spinner alternative-text="Loading courses..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- No Courses Message -->
+        <template if:true={showNoCourses}>
+            <div class="slds-m-around_large slds-text-align_center">
+                <lightning-icon icon-name="custom:custom78" size="large"></lightning-icon>
+                <p class="slds-text-heading_medium slds-m-top_medium">No courses available</p>
+                <p class="slds-m-top_small">Check back later for new courses.</p>
+            </div>
+        </template>
+
+        <!-- Course List -->
+        <template if:true={hasCourses}>
+            <div class="slds-m-around_medium">
+                <template for:each={filteredCourses} for:item="course">
+                    <div key={course.Id} class="slds-box slds-m-bottom_medium">
+                        
+                        <!-- Course Header with Icon -->
+                        <div class="slds-media slds-m-bottom_small">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="standard:education" size="large"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <h3 class="slds-text-heading_small slds-m-bottom_xx-small">
+                                    {course.Course__r.Name}
+                                </h3>
+                                <p class="slds-text-body_small slds-text-color_weak">
+                                    {course.Course__r.Course_Code__c}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Course Details Grid -->
+                        <div class="slds-grid slds-wrap slds-m-top_small slds-m-bottom_small">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="slds-text-body_small"><strong>Term:</strong> {course.Term__c}</p>
+                                <p class="slds-text-body_small"><strong>Section:</strong> {course.Section__c}</p>
+                                <p class="slds-text-body_small"><strong>Instructor:</strong> {course.Instructor__c}</p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="slds-text-body_small"><strong>Schedule:</strong> {course.Meeting_Days__c}</p>
+                                <p class="slds-text-body_small"><strong>Time:</strong> {course.Meeting_Time__c}</p>
+                                <p class="slds-text-body_small"><strong>Location:</strong> {course.Location__c}</p>
+                            </div>
+                        </div>
+
+                        <!-- Enrollment Info and Button -->
+                        <div class="slds-m-top_medium slds-p-top_medium slds-border_top">
+                            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                <!-- Seat Availability -->
+                                <div class="slds-col">
+                                    <template if:true={course.isFull}>
+                                        <lightning-badge label="FULL" class="slds-theme_error"></lightning-badge>
+                                        <p class="slds-text-body_small slds-m-top_xx-small">
+                                            {course.Current_Enrollment__c} / {course.Max_Enrollment__c} enrolled
+                                        </p>
+                                    </template>
+                                    <template if:false={course.isFull}>
+                                        <lightning-badge label="Available" class="slds-theme_success"></lightning-badge>
+                                        <p class="slds-text-body_small slds-m-top_xx-small">
+                                            {course.seatsAvailable} seats available ({course.Current_Enrollment__c}/{course.Max_Enrollment__c})
+                                        </p>
+                                    </template>
+                                </div>
+
+                                <!-- Enroll Button -->
+                                <div class="slds-col slds-no-flex">
+                                    <lightning-button
+                                        label="Enroll"
+                                        variant="brand"
+                                        disabled={course.isFull}
+                                        data-course-id={course.Id}
+                                        onclick={handleEnroll}>
+                                    </lightning-button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

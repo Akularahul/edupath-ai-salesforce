@@ -1,0 +1,90 @@
+<template>
+    <div class={cardClass}>
+        
+        <!-- Course Header -->
+        <div class="slds-media slds-m-bottom_small">
+            <div class="slds-media__figure">
+                <lightning-icon 
+                    icon-name="standard:education" 
+                    size="medium">
+                </lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h3 class="slds-text-heading_small">
+                    {course.Course__r.Name}
+                </h3>
+                <p class="slds-text-body_small slds-text-color_weak">
+                    {course.Course__r.Course_Code__c}
+                </p>
+            </div>
+        </div>
+
+        <!-- Course Details -->
+        <div class="slds-grid slds-wrap slds-m-bottom_small">
+            <div class="slds-col slds-size_1-of-2">
+                <p class="slds-text-body_small">
+                    <strong>Term:</strong> {course.Term__c}
+                </p>
+                <p class="slds-text-body_small">
+                    <strong>Section:</strong> {course.Section__c}
+                </p>
+                <p class="slds-text-body_small">
+                    <strong>Instructor:</strong> {course.Instructor__c}
+                </p>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <p class="slds-text-body_small">
+                    <strong>Days:</strong> {course.Meeting_Days__c}
+                </p>
+                <p class="slds-text-body_small">
+                    <strong>Time:</strong> {course.Meeting_Time__c}
+                </p>
+                <p class="slds-text-body_small">
+                    <strong>Location:</strong> {course.Location__c}
+                </p>
+            </div>
+        </div>
+
+        <!-- Availability and Enroll Button -->
+        <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-m-top_small slds-p-top_small slds-border_top">
+            
+            <!-- Seat Info -->
+            <div class="slds-col">
+                <template if:true={course.isFull}>
+                    <lightning-badge label="FULL"></lightning-badge>
+                    <p class="slds-text-body_small slds-m-top_xx-small">
+                        {course.Current_Enrollment__c}/{course.Max_Enrollment__c} enrolled
+                    </p>
+                </template>
+                <template if:false={course.isFull}>
+                    <lightning-badge label="Available" class="slds-theme_success"></lightning-badge>
+                    <p class="slds-text-body_small slds-m-top_xx-small">
+                        {course.seatsAvailable} seats left
+                    </p>
+                </template>
+            </div>
+
+            <!-- Enroll Button -->
+            <div class="slds-col slds-no-flex">
+                <template if:true={isEnrolled}>
+                    <lightning-button
+                        label="Enrolled ✓"
+                        variant="success"
+                        disabled="true">
+                    </lightning-button>
+                </template>
+                <template if:false={isEnrolled}>
+                    <lightning-button
+                        label="Enroll"
+                        variant="brand"
+                        disabled={course.isFull}
+                        data-course-id={course.Id}
+                        onclick={handleEnrollClick}>
+                    </lightning-button>
+                </template>
+            </div>
+
+        </div>
+
+    </div>
+</template>

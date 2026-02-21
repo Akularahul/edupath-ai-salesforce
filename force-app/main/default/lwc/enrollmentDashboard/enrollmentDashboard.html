@@ -1,0 +1,111 @@
+<template>
+    <div class="dashboard-container">
+
+        <!-- Dashboard Header -->
+        <lightning-card title="Student Enrollment Dashboard" icon-name="standard:dashboard">
+
+            <!-- Header Actions -->
+            <div slot="actions">
+                <lightning-button
+                    label="Refresh All"
+                    icon-name="utility:refresh"
+                    onclick={handleRefreshAll}>
+                </lightning-button>
+            </div>
+
+            <div class="slds-m-around_medium">
+
+                <!-- Welcome Message -->
+                <div class="welcome-banner slds-m-bottom_medium slds-p-around_medium">
+                    <h2 class="slds-text-heading_medium">
+                        Welcome, {currentUserName}!
+                    </h2>
+                    <p class="slds-text-body_small slds-text-color_weak">
+                        Browse available courses and manage your enrollments below.
+                    </p>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <!-- LEFT COLUMN: Course Browser -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+
+                        <!-- Search and Filter -->
+                        <div class="slds-box slds-m-bottom_medium">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">
+                                🔍 Find Courses
+                            </h3>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input
+                                        type="search"
+                                        label="Search by Course Name"
+                                        value={searchKey}
+                                        onchange={handleSearchChange}
+                                        placeholder="e.g. Calculus, Database...">
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-combobox
+                                        name="termFilter"
+                                        label="Filter by Term"
+                                        value={selectedTerm}
+                                        placeholder="All Terms"
+                                        options={termOptions}
+                                        onchange={handleTermChange}>
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loading Spinner -->
+                        <template if:true={isLoadingCourses}>
+                            <div class="slds-m-around_large slds-text-align_center">
+                                <lightning-spinner alternative-text="Loading courses..." size="medium"></lightning-spinner>
+                            </div>
+                        </template>
+
+                        <!-- No Courses Found -->
+                        <template if:true={showNoCourses}>
+                            <div class="slds-text-align_center slds-m-around_large">
+                                <lightning-icon icon-name="custom:custom78" size="large"></lightning-icon>
+                                <p class="slds-text-heading_medium slds-m-top_medium">No courses found</p>
+                                <p class="slds-text-body_small">Try adjusting your filters.</p>
+                            </div>
+                        </template>
+
+                        <!-- Course Cards List -->
+                        <!-- Each course card is a CHILD COMPONENT -->
+                        <template if:true={hasCourses}>
+                            <template for:each={filteredCourses} for:item="course">
+                                <c-course-card
+                                    key={course.Id}
+                                    course={course}
+                                    enrolled-course-ids={enrolledCourseIds}
+                                    onenroll={handleCourseEnroll}>
+                                </c-course-card>
+                            </template>
+                        </template>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN: Enrollment Summary -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+
+                        <!-- Enrollment Summary is a CHILD COMPONENT -->
+                        <c-enrollment-summary
+                            class="summary-component"
+                            lwc:ref="summaryComponent">
+                        </c-enrollment-summary>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+</template>

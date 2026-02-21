@@ -1,0 +1,23 @@
+.dashboard-container {
+    padding: 8px;
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, #0070d2, #1589ee);
+    border-radius: 8px;
+    color: white;
+}
+
+.welcome-banner h2 {
+    color: white !important;
+    font-weight: bold;
+}
+
+.welcome-banner p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.summary-component {
+    position: sticky;
+    top: 16px;
+}

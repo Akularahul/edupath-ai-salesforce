@@ -1,0 +1,22 @@
+.course-card {
+    background-color: white;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-left: 4px solid #0070d2;
+}
+
+.course-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.enrolled-card {
+    border-left: 4px solid #04844b !important;
+    background-color: #f4fff9;
+}
+
+.full-card {
+    border-left: 4px solid #c23934 !important;
+    background-color: #fff8f7;
+    opacity: 0.8;
+}

@@ -1,0 +1,29 @@
+.summary-stat {
+    border-radius: 8px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+}
+
+.summary-stat:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    color: #0070d2;
+    font-weight: bold;
+    font-size: 2rem !important;
+}
+
+.enrollment-item {
+    border-radius: 6px;
+    background-color: #ffffff;
+    border-left: 3px solid #0070d2;
+    transition: all 0.2s ease;
+}
+
+.enrollment-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
