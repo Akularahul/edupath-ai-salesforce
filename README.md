@@ -9,7 +9,7 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 
 **Built by:** Rahul Akula  
 **Timeline:** 24 weeks (Dec 2025 - June 2026)  
-**Status:** Week 8 Complete ✅
+**Status:** Week 9 Complete ✅
 
 ## 🚀 Key Features
 
@@ -58,7 +58,12 @@ EduPath AI is a comprehensive Education Cloud platform that transforms student s
 - **Week 3** ✅ Automation & Process Builder - COMPLETED 
 - **Week 4** ✅ Apex Development & Triggers - COMPLETED
 - **Week 5** ✅ Advanced Flows & Screen Flow - COMPLETED
-- **Week 5** ✅ Lightning Web Components Intro - COMPLETED
+- **Week 6** ✅ Lightning Web Components - COMPLETED
+- **Week 7** ✅ Advanced LWC - COMPLETED
+- **Week 8** ✅ Component Communication - COMPLETED
+- **Week 9** ✅ Advanced Apex & SOQL  - COMPLETED
+
+
 
 ## 🎓 Week 1: Foundation & Setup ✅
 
@@ -477,8 +482,58 @@ Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
 
 ---
 
-### 🎯 Week 9: Advanced Apex & SOQL Optimization (NEXT)
-**Starting:** Week of February 17, 2026
+---
+
+### ✅ Week 9: Advanced Apex & SOQL Optimization (Complete)
+**Duration:** February 15, 2026
+
+**Completed:**
+- BulkEnrollmentProcessor (150 lines)
+- StudentGradeCalculatorBatch (120 lines)
+- EnrollmentReportGenerator (110 lines)
+- AdvancedSOQLQueries (180 lines)
+- Complete test suite (360 lines)
+
+**Technical Skills:**
+- Bulkification (no SOQL in loops)
+- Collection usage (Set, Map, List)
+- Batch Apex (Database.Batchable)
+- Queueable Apex (async processing)
+- Aggregate SOQL (COUNT, AVG, GROUP BY, HAVING)
+- Subqueries (parent-to-child, child-to-parent)
+- Dynamic SOQL
+- Governor limit optimization
+
+**Code Metrics:**
+- 920 lines production code
+- 20 tests - 100% pass rate
+- Code coverage: 81-97%
+- 4 production classes
+- 4 test classes
+
+**Business Value:**
+- Process 200+ enrollments in single transaction
+- Calculate GPA for unlimited students via batch
+- Generate reports asynchronously
+- Enterprise-ready performance
+
+**Patterns Mastered:**
+- Bulkification for scale
+- Batch processing for large datasets
+- Queueable for background jobs
+- Aggregate queries for statistics
+- Dynamic query building
+
+**📊 [View Week 9 Documentation](documentation/week-by-week/week-09-advanced-apex.md)**  
+**📸 [View Screenshots](documentation/screenshots/week-09/)**
+
+---
+
+### 🎯 Week 10: Integration & REST APIs (NEXT)
+**Starting:** Week of February 17, 2026  
+**Focus:** REST API integration, HTTP callouts, External services
+
+---
 
 ---
 
