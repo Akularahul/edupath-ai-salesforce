@@ -82,7 +82,7 @@ sf apex run test --target-org EduPathAI --code-coverage
 
 **Built by Rahul Akula** · Salesforce Certified Administrator & Agentforce Specialist
 
-<a href="https://www.linkedin.com/in/rahulakula"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/rahul-akula-0a0284310"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
 &nbsp;
 <a href="mailto:akula.rahul4545@gmail.com"><img src="https://img.shields.io/badge/Email-Say%20Hello-EA4335?style=flat-square&logo=gmail&logoColor=white"/></a>
 
