@@ -1,551 +1,89 @@
-# EduPath AI - Intelligent Learning Management Platform
+<!-- Header -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=EduPath%20AI&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI-Powered%20Salesforce%20Education%20Cloud%20Platform%20·%20Agentforce%20·%20Einstein&descSize=16&descAlignY=60&descColor=a5b4fc" />
 
-![Project Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![Week](https://img.shields.io/badge/Week-6-green) 
+<div align="center">
 
-## 🎓 Project Overview
+![Salesforce](https://img.shields.io/badge/Salesforce-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
+![Education Cloud](https://img.shields.io/badge/Education%20Cloud-032D60?style=flat-square&logo=salesforce&logoColor=white)
+![Agentforce](https://img.shields.io/badge/Agentforce-1798c1?style=flat-square&logo=salesforce&logoColor=white)
+![Apex](https://img.shields.io/badge/Apex-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
 
-EduPath AI is a comprehensive Education Cloud platform that transforms student success through AI-powered predictions, personalized career pathways, and automated engagement.
+</div>
 
-**Built by:** Rahul Akula  
-**Timeline:** 24 weeks (Dec 2025 - June 2026)  
-**Status:** Week 9 Complete ✅
+## ◈ Overview
 
-## 🚀 Key Features
+**EduPath AI** is an intelligent Salesforce Education Cloud platform that streamlines student onboarding and surfaces at-risk students in real time. It combines a robust seven-object schema with Agentforce-aligned proactive intelligence to help advising teams intervene early and act on data — not guesswork.
 
-- **AI Student Success Prediction** - Identify at-risk students 4-6 weeks early
-- **Personalized Career Pathways** - AI-driven course and career recommendations
-- **Automated Engagement** - Marketing Cloud journeys for timely interventions
-- **360° Student View** - Data Cloud unified profile
-- **Self-Service Portals** - Experience Cloud for students, faculty, alumni
-- **Real-Time Analytics** - Einstein Analytics dashboards
-- **AI Virtual Advisor** - Agentforce 24/7 support chatbot
+## ◈ Key Features
 
-## 🛠️ Technology Stack
+- 🏗️ **Seven-object Education Cloud schema** with **20 validation rules**, **10 formula fields**, and **4 roll-up summaries**
+- ⚙️ **6 Flows + 3 automations** that cut student onboarding from **12 steps to 3**
+- 🚨 **GPA-based at-risk alerts** and **enrollment-capacity triggers** across **500 student records**
+- 🤖 **Agentforce-aligned intelligence** surfacing real-time intervention opportunities
+- 🧪 **Bulkified Apex trigger** with **96% test coverage** across **8 test methods**
+- 🎯 **Personalized career pathways** and automated student engagement
 
-**Salesforce Products:**
-- Education Cloud (Custom Data Model)
-- Experience Cloud
-- Einstein Analytics / Tableau CRM
-- Marketing Cloud Account Engagement
-- Data Cloud
-- Agentforce
+## ◈ Architecture
 
-**Development:**
-- Apex, Lightning Web Components (LWC)
-- Salesforce Flow
-- VS Code, Git, GitHub
-
-## 📊 Certifications
-
-**Completed:**
-- ✅ Salesforce Administrator
-- ✅ Agentforce Specialist
-
-**In Progress:**
-- 🎯 Platform Developer I
-
-**Planned:**
-- Education Cloud Consultant
-- Experience Cloud Consultant
-- Tableau CRM Consultant
-- Platform Developer II
-
-## 📅 Progress
-
-- **Week 1** ✅ Foundation & Setup - COMPLETED
-- **Week 2** ✅ Building Education Data Model - COMPLETED
-- **Week 3** ✅ Automation & Process Builder - COMPLETED 
-- **Week 4** ✅ Apex Development & Triggers - COMPLETED
-- **Week 5** ✅ Advanced Flows & Screen Flow - COMPLETED
-- **Week 6** ✅ Lightning Web Components - COMPLETED
-- **Week 7** ✅ Advanced LWC - COMPLETED
-- **Week 8** ✅ Component Communication - COMPLETED
-- **Week 9** ✅ Advanced Apex & SOQL  - COMPLETED
-
-
-
-## 🎓 Week 1: Foundation & Setup ✅
-
-**Duration:** December 23-29, 2024
-
-### Achievements:
-- ✅ Set up Salesforce Developer Edition org
-- ✅ Configured VS Code with Salesforce extensions
-- ✅ Connected GitHub repository
-- ✅ Completed Salesforce Admin certification
-- ✅ Completed Agentforce Specialist certification
-- ✅ Planned 24-week project roadmap
-
-### Skills Gained:
-- Salesforce org setup and navigation
-- Development environment configuration
-- Version control with Git/GitHub
-- Project planning and documentation
-
-**📋 [View Week 1 Details](documentation/week-01-summary.md)**
-
----
-
-## 🎓 Week 2: Education Data Model ✅  
-
-**Duration:** December 29, 2024 - January 3, 2025
-
-### What I Built:
-- ✅ **5 Custom Objects** (Student, Academic Program, Course, Course Offering, Enrollment)
-- ✅ **480+ Records** of realistic university data
-- ✅ **Junction Object** implementing many-to-many relationships
-- ✅ **15 Formula Fields** for automated calculations
-- ✅ **9 Validation Rules** ensuring data quality
-- ✅ **3 Rollup Summaries** auto-counting enrollments & calculating GPAs
-- ✅ **7 Business Reports** providing actionable insights
-- ✅ **1 Executive Dashboard** with 6 widgets
-
-### Key Achievements:
-- 🎯 Mastered junction objects (Enrollment connects Students ↔ Course Offerings)
-- 🎯 Implemented rollup summaries (auto-calculating enrollment counts & averages)
-- 🎯 Built self-lookup relationship (Course prerequisites)
-- 🎯 Imported bulk data (300+ records via Data Import Wizard)
-- 🎯 Created At-Risk Student identification system
-
-### Data Model:
 ```
-Student (100) → Enrollment (305) ← Course Offering (50) → Course (15)
-              ↘                  ↗
-                Academic Program (10)
+Student Record  →  Onboarding Flow (3 steps)  →  Enrollment Automation
+      │                                                │
+      ▼                                                ▼
+  GPA Monitor  →  At-Risk Trigger (Apex)  →  Agentforce Alert / Advisor Task
+                                                       │
+                                                       ▼
+                                        Dashboards (Retention & Success KPIs)
 ```
 
-### Technical Skills Demonstrated:
-- Complex data modeling (5 custom objects)
-- Master-Detail vs Lookup relationships
-- Cross-object formulas (3 levels deep)
-- Rollup summary fields (COUNT, SUM, AVG)
-- Data Import Wizard expertise
-- Report & Dashboard building
-- Validation rule creation
-- Formula field development
+## ◈ Tech Stack
 
-### Business Value:
-- At-Risk Student report identifies 15-25 students needing intervention
-- Course Popularity dashboard shows capacity planning needs
-- GPA Distribution analysis tracks academic health
-- Real-time enrollment tracking eliminates manual counting
+| Layer | Technology |
+|---|---|
+| Platform | Salesforce Education Cloud |
+| Automation | Apex Triggers, Record-Triggered Flows |
+| AI | Agentforce, Einstein Analytics |
+| Data | 7 Custom Objects, Validation Rules, Roll-Up Summaries |
+| DevOps | SFDX, GitHub |
 
-**📊 [View Week 2 Summary](documentation/WEEK-02-SUMMARY.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-02/)**
+## ◈ Project Structure
 
+```
+force-app/main/default/
+├── classes/            # Bulkified Apex triggers, handlers, tests (96% coverage)
+├── flows/              # Onboarding, enrollment, and alert automations
+├── objects/            # 7-object Education Cloud schema
+├── layouts/            # Student & program page layouts
+└── permissionsets/     # Advisor & admin access
+```
 
----
+## ◈ Getting Started
 
-## 🎓 Week 3: Automation & Process Builder ✅ COMPLETE
+```bash
+# Authorize a Salesforce org
+sf org login web --alias EduPathAI
 
-**Duration:** January 6-10, 2026  
-**Status:** ✅ Completed
+# Deploy metadata
+sf project deploy start --target-org EduPathAI
 
-### What I Built:
-- ✅ **5 Workflow Rules** - Email automation and field updates
-- ✅ **3 Process Builder Flows** - Multi-action automation with cross-object updates
-- ✅ **1 Approval Process** - Course override workflow with dynamic routing
-- ✅ **8 Email Templates** - Professional text and HTML templates
-- ✅ **3 New Fields** - Supporting automation logic
-- ✅ **13 Automated Actions** - Eliminating manual work
+# Run Apex tests
+sf apex run test --target-org EduPathAI --code-coverage
+```
 
-### Automation Rules Created:
+## ◈ Roadmap
 
-**Workflow Rules:**
-1. New Student Welcome Email - Immediate confirmation on enrollment
-2. Auto-Update to Senior Status - Automatic progression at 90 credits
-3. At-Risk Student Notification - Alerts when GPA < 2.5
-4. Registration Reminder - Time-based workflow (7 days before deadline)
-5. Student Leave Task Assignment - Creates advisor follow-up tasks
-
-**Process Builder Flows:**
-1. Enrollment Confirmation Process - 3 actions (email + 2 field updates)
-2. Course Capacity Alert Process - Formula-based monitoring (80% threshold)
-3. Graduate Status Automation - Auto-graduation at 120 credits with congratulations
-
-**Approval Process:**
-1. Course Override Approval - Controlled enrollment with instructor approval
-
-### Key Achievements:
-- 🎯 Cross-object field updates (update Student from Enrollment)
-- 🎯 Formula-based criteria (80% capacity calculation)
-- 🎯 Time-dependent workflows (scheduled reminders)
-- 🎯 HTML email templates with professional CSS styling
-- 🎯 Approval workflows with automatic status changes
-- 🎯 Multi-action processes (3 actions in 1 trigger)
-
-### Technical Skills Demonstrated:
-- Workflow Rules configuration and evaluation criteria
-- Process Builder multi-action flows
-- Approval process design with Jump Start Wizard
-- Email automation with merge fields (3 levels deep)
-- Formula criteria expressions
-- Time-based workflow actions
-- Cross-object relationship traversal
-- Record locking during approvals
-
-### Business Value Delivered:
-- **Enrollment confirmations:** 5 min × 300 enrollments = 25 hours saved/semester
-- **At-risk monitoring:** Proactive intervention prevents dropouts
-- **Capacity management:** Prevents overenrollment issues
-- **Graduation automation:** Zero missed graduations
-- **Override control:** Maintains enrollment integrity
-- **Total time saved:** 50+ hours per semester automated
-
-### System Capabilities:
-✅ Automatic welcome emails for new students  
-✅ Proactive at-risk student alerts to advisors  
-✅ Course capacity monitoring and department notifications  
-✅ Automatic graduation status progression  
-✅ Registration deadline reminders (scheduled)  
-✅ Controlled course override approvals  
-✅ Advisor task creation for student leave  
-✅ Zero manual intervention required!  
-
-**📊 [View Week 3 Documentation](documentation/week-by-week/week-03-day-03.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-03/)**
+- [ ] Predictive enrollment forecasting with Einstein
+- [ ] Conversational Agentforce advising assistant
+- [ ] Experience Cloud student self-service portal
 
 ---
 
-### ✅ Week 4: Apex Development & Triggers - Complete
-**Duration:** January 13-17, 2026
+<div align="center">
 
-**Completed:**
-- Apex Trigger: EnrollmentTrigger (60 lines)
-- Test Class: EnrollmentTriggerTest (70 lines)
-- 96% code coverage (required: 75%)
-- Comprehensive debugging and problem-solving
+**Built by Rahul Akula** · Salesforce Certified Administrator & Agentforce Specialist
 
-**Trigger Functionality:**
-- Prevents enrollment in full courses
-- Counts only active enrollments (not dropped/completed)
-- Bulkified for handling multiple records
-- User-friendly error messages
+<a href="https://www.linkedin.com/in/rahulakula"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
+&nbsp;
+<a href="mailto:akula.rahul4545@gmail.com"><img src="https://img.shields.io/badge/Email-Say%20Hello-EA4335?style=flat-square&logo=gmail&logoColor=white"/></a>
 
-**Technical Skills:**
-- Trigger context variables (Trigger.new)
-- SOQL aggregate queries (COUNT, GROUP BY)
-- Collections (Set, Map, List)
-- Exception handling (try-catch)
-- Test class creation with assertions
-- Debugging production code
-
-**Code Quality:**
-- 130 lines of production-ready code
-- 96% test coverage
-- Follows Salesforce best practices
-- Bulkified and governor limit compliant
-
-**Debugging Journey:**
-- Resolved 6 different issues
-- Learned trigger timing and field access
-- Mastered test data creation
-- Achieved deployment readiness
-
-**📊 [View Week 4 Documentation](documentation/week-by-week/week-04-apex-triggers.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-04/)**
-
----
-
----
-
-### ✅ Week 5: Advanced Flows & Screen Flows (Complete)
-**Duration:** January 20-23, 2026
-
-**Completed:**
-- Screen Flow: Course Search Wizard (15+ elements)
-- Record-Triggered Flow: Enrollment Auto Notification (3 elements)
-- Interactive UI with data tables
-- Modern automation replacing Process Builder
-
-**Screen Flow Features:**
-- Multi-screen wizard interface
-- SOQL course search by term
-- Interactive data table display
-- User input validation
-- Error handling screens
-- Merge field confirmations
-
-**Record-Triggered Flow Features:**
-- Automatic trigger on enrollment creation
-- Cross-object field updates
-- Email notifications with dynamic content
-- Background processing
-
-**Technical Skills:**
-- Screen components (text input, picklist, data table)
-- Get Records with filters
-- Decision logic and branching
-- Collection and record variables
-- Record-Triggered Flow configuration
-- Assignment elements
-- Send Email action
-- Flow debugging and testing
-
-**Debugging Experience:**
-- Resolved variable assignment issues
-- Fixed field reference errors
-- Simplified complex logic
-- Systematic element testing
-
-**Business Value:**
-- Self-service course browsing
-- Real-time course availability
-- Automatic notifications
-- Zero manual intervention
-- Enhanced student experience
-
-**📊 [View Week 5 Documentation](documentation/week-by-week/week-05-advanced-flows.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-05/)**
-
----
-
-
-### ✅ Week 6: Lightning Web Components Introduction (Complete)
-**Duration:** January 28-29, 2026
-
-**Completed:**
-- Professional development environment (VS Code + CLI)
-- First Lightning Web Component (95 lines)
-- Apex Controller integration (40 lines)
-- Interactive UI with search and refresh
-- Deployed to Salesforce org
-
-**Component Built:**
-- Enrollment Viewer component
-- Displays user's course enrollments
-- Search functionality (real-time filtering)
-- Refresh button for data reload
-- Professional Lightning Design System styling
-
-**Technical Implementation:**
-- HTML template with conditional rendering
-- JavaScript with decorators (@track, @wire)
-- Apex @AuraEnabled method
-- SOQL relationship queries
-- Lightning App Builder deployment
-
-**Development Tools:**
-- VS Code with Salesforce Extensions
-- Salesforce CLI (sf commands)
-- Project-based development
-- Command-line deployment
-
-**Skills Demonstrated:**
-- LWC component structure (HTML, JS, XML)
-- Modern JavaScript (ES6+)
-- Apex backend integration
-- Wire service for data loading
-- Event handling (search, refresh)
-- SLDS styling
-- Responsive design
-- Lightning page creation
-
-**Code Metrics:**
-- 135 lines of production code
-- 3 component files
-- 1 Apex class
-- 8 screenshots
-- 100% deployment success
-
-**Business Value:**
-- Self-service enrollment viewing
-- Mobile-responsive interface
-- Real-time data display
-- Professional user experience
-- Reusable component architecture
-
-**📊 [View Week 6 Documentation](documentation/week-by-week/week-06-lightning-web-components.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-06/)**
-
----
-
-### ✅ Week 7: Advanced LWC - Course Enrollment (Complete)
-**Duration:** February 10, 2026
-
-**Completed:**
-- Course Browser Component (240 lines total)
-- Advanced Apex Controller (120 lines)
-- Interactive course enrollment system
-- Real-time seat availability tracking
-- Toast notifications for user feedback
-
-**Component Features:**
-- Search box for filtering courses
-- Refresh button for reloading data
-- Course cards with detailed information
-- One-click enrollment
-- Seat availability badges (Available/Full)
-- Dynamic button states (disabled when full)
-
-**Technical Implementation:**
-- Imperative Apex calls for DML operations
-- Wire service for data display
-- Promise handling (.then/.catch)
-- Toast notifications (ShowToastEvent)
-- refreshApex for cache updates
-- Data transformation with map()
-- Optional chaining for safety
-
-**Business Logic:**
-- Duplicate enrollment prevention
-- Course capacity validation
-- User-based student lookup
-- Real-time seat count updates
-- Automatic enrollment record creation
-- Error handling with custom messages
-
-**Apex Controller:**
-- getCourseOfferings() - cacheable query
-- createEnrollment() - DML with validation
-- SOQL relationship queries
-- Custom AuraHandledException
-- with sharing security
-
-**Advanced Skills:**
-- Imperative vs declarative Apex calls
-- Toast event dispatching
-- Data transformation and computed properties
-- Event.target.dataset for data passing
-- Comprehensive error handling
-- Loading/empty/error states
-
-**Code Metrics:**
-- 360 lines production code
-- 2 LWC files (HTML, JS)
-- 1 Apex class
-- 8 screenshots
-- 100% functionality working
-
-**Business Value:**
-- Self-service course enrollment
-- Prevents over-enrollment automatically
-- Real-time capacity management
-- Professional user notifications
-- Instant enrollment confirmation
-- Zero manual intervention required
-
-**📊 [View Week 7 Documentation](documentation/week-by-week/week-07-advanced-lwc.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-07/)**
-
----
-
----
-
-### ✅ Week 8: Component Communication & Events (Complete)
-**Duration:** February 14, 2026
-
-**Completed:**
-- Parent Component: Enrollment Dashboard
-- Child Component 1: Course Card (reusable)
-- Child Component 2: Enrollment Summary
-- Complete component communication system
-- Real-time stats updates across components
-
-**Communication Patterns:**
-- @api for passing data parent → child
-- CustomEvent for passing data child → parent
-- querySelector for parent calling child methods
-- Promise.all for parallel data refresh
-
-**Components Built:**
-- enrollmentDashboard (parent controller)
-- courseCard (reusable course display)
-- enrollmentSummary (statistics display)
-
-**Technical Skills:**
-- @api decorator (public properties/methods)
-- CustomEvent creation and dispatching
-- Event listeners in HTML (onenroll)
-- template.querySelector for child access
-- Promise.all for parallel operations
-- Dynamic CSS class binding
-- Sticky sidebar layout
-
-**Business Value:**
-- Complete self-service enrollment system
-- Real-time availability updates
-- Professional dashboard interface
-- Reusable component architecture
-- Scalable for enterprise deployment
-
-**Code Metrics:**
-- 520 lines production code
-- 3 LWC components
-- 4 CSS files
-- 2 Apex controllers
-- 8 screenshots
-
-**📊 [View Documentation](documentation/week-by-week/week-08-component-communication.md)**
-**📸 [View Screenshots](documentation/screenshots/week-08/)**
-
----
-
----
-
-### ✅ Week 9: Advanced Apex & SOQL Optimization (Complete)
-**Duration:** February 15, 2026
-
-**Completed:**
-- BulkEnrollmentProcessor (150 lines)
-- StudentGradeCalculatorBatch (120 lines)
-- EnrollmentReportGenerator (110 lines)
-- AdvancedSOQLQueries (180 lines)
-- Complete test suite (360 lines)
-
-**Technical Skills:**
-- Bulkification (no SOQL in loops)
-- Collection usage (Set, Map, List)
-- Batch Apex (Database.Batchable)
-- Queueable Apex (async processing)
-- Aggregate SOQL (COUNT, AVG, GROUP BY, HAVING)
-- Subqueries (parent-to-child, child-to-parent)
-- Dynamic SOQL
-- Governor limit optimization
-
-**Code Metrics:**
-- 920 lines production code
-- 20 tests - 100% pass rate
-- Code coverage: 81-97%
-- 4 production classes
-- 4 test classes
-
-**Business Value:**
-- Process 200+ enrollments in single transaction
-- Calculate GPA for unlimited students via batch
-- Generate reports asynchronously
-- Enterprise-ready performance
-
-**Patterns Mastered:**
-- Bulkification for scale
-- Batch processing for large datasets
-- Queueable for background jobs
-- Aggregate queries for statistics
-- Dynamic query building
-
-**📊 [View Week 9 Documentation](documentation/week-by-week/week-09-advanced-apex.md)**  
-**📸 [View Screenshots](documentation/screenshots/week-09/)**
-
----
-
-### 🎯 Week 10: Integration & REST APIs (NEXT)
-**Starting:** Week of February 17, 2026  
-**Focus:** REST API integration, HTTP callouts, External services
-
----
-
----
-
-
-## 👨‍💻 About
-
-**Rahul Akula**  
-Master's in Information Systems (Data Analytics)  
-Transitioning into Salesforce Development
-
-**Repository:** https://github.com/Akularahul/edupath-ai-salesforce
-
----
-
-⭐ Star this repo to follow the journey!
+</div>
